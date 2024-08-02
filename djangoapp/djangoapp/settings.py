@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'futallu.apps.FutalluConfig',
 ]
 
 SITE_ID = 1
@@ -72,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'futallu.wsgi.application'
+WSGI_APPLICATION = 'djangoapp.wsgi.application'
 
 
 # Database
