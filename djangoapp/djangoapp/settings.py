@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+&er)k#-cuptc9t@i9^02b5)b1g8ktq8!=#=n2s$a*j^6o(bv2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.getenv('DEBUG', 0)))
+DEBUG = bool(int(os.getenv('DEBUG', 1)))
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR.parent / 'data' / 'web'
 
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'futallu.urls'
+ROOT_URLCONF = 'djangoapp.urls'
 
 TEMPLATES = [
     {
@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'djangoapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': os.getenv('DB_ENGINE', "django.db.backends.postgresql_psycopg2"),
+        'NAME': os.getenv('POSTGRES_DB', "pg_database"),
+        'USER': os.getenv('POSTGRES_USER', "postgres"),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD',"123"),
+        'HOST': os.getenv('DB_HOST', "localhost"),
+        'PORT': os.getenv('DB_PORT', "5432"),
     }
 }
 
