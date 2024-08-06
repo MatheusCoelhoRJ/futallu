@@ -90,3 +90,4 @@ db.sqlite3
 /data
 /.vscode
 /venv/
+/new_venv/
